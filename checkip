@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source ./util.sh # provides some colors
+
+curl "ipv4.icanhazip.com"
+
+
+
+
