@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "TOGGLING RAISE ON CLICK" > ./bug.log
+# Check the current value of the setting
+current_setting=$(gsettings get org.gnome.desktop.wm.preferences raise-on-click)
+
+if [ "$current_setting" = "true" ]; then
+    gsettings set org.gnome.desktop.wm.preferences raise-on-click false
+    notify-send -r 999 "Raise on Click is Disabled" "use the keybind again to re-enable it"
+
+else
+    gsettings set org.gnome.desktop.wm.preferences raise-on-click true
+    notify-send -r 999 "Raise on Click is Enabled" "use the keybind again to disable it"
+fi
+
